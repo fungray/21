@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.mingrisoft.activity.a21.R;
 import com.mingrisoft.activity.a21.dao.InaccountDAO;
 import com.mingrisoft.activity.a21.model.Tb_inaccount;
 

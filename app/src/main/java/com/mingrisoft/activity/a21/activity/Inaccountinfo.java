@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.mingrisoft.activity.a21.R;
 import com.mingrisoft.activity.a21.dao.InaccountDAO;
 import com.mingrisoft.activity.a21.model.Tb_inaccount;
 
