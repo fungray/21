@@ -1,51 +1,50 @@
 package com.mingrisoft.activity.a21.dao;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.mingrisoft.activity.a21.model.Tb_inaccount;
+import com.mingrisoft.activity.a21.model.Tb_outaccount;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by apple on 2017/12/26.
+ * Created by apple on 2017/12/29.
  */
 
-public class InaccountDAO {
+public class OutaccountDAO {
     private DBOpenHelper helper;
     private SQLiteDatabase db;
-    public InaccountDAO(Context context){
+    public OutaccountDAO(Context context){
         helper = new DBOpenHelper(context);
     }
 
-    public void add(Tb_inaccount tb_inaccount) {
+    public void add(Tb_outaccount tb_outaccount) {
         db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
-        db.execSQL("insert into tb_inaccount (_id,money,time,type,handler,mark) values (?,?,?,?,?,?)",
-                new Object[]{ tb_inaccount.get_id(), tb_inaccount.getMoney(), tb_inaccount.getTime(), tb_inaccount.getType(),
-                        tb_inaccount.getHandler(), tb_inaccount.getMark() });
+        db.execSQL("insert into tb_outaccount (_id,money,time,type,address,mark) values (?,?,?,?,?,?)",
+                new Object[]{ tb_outaccount.get_id(), tb_outaccount.getMoney(), tb_outaccount.getTime(), tb_outaccount.getType(),
+                        tb_outaccount.getAddress(), tb_outaccount.getMark() });
     }
 
-    public void update(Tb_inaccount tb_inaccount){
+    public void update(Tb_outaccount tb_outaccount){
         db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
-        db.execSQL("update tb_inaccount set money = ?,time = ?,type = ?,handler = ?,mark = ? where _id = ?",
-                new Object[]{ tb_inaccount.get_id(), tb_inaccount.getMoney(), tb_inaccount.getTime(), tb_inaccount.getType(),
-                        tb_inaccount.getHandler(), tb_inaccount.getMark() });
+        db.execSQL("update tb_outaccount set money = ?,time = ?,type = ?,address = ?,mark = ? where _id = ?",
+                new Object[]{ tb_outaccount.get_id(), tb_outaccount.getMoney(), tb_outaccount.getTime(), tb_outaccount.getType(),
+                        tb_outaccount.getAddress(), tb_outaccount.getMark() });
     }
 
-    public Tb_inaccount find(int id){
+    public Tb_outaccount find(int id){
         db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
-        Cursor cursor = db.rawQuery("select _id,money,time,type,handler,mark from tb_inaccount where _id = ?",
+        Cursor cursor = db.rawQuery("select _id,money,time,type,address,mark from tb_outaccount where _id = ?",
                 new String[]{ String.valueOf(id) });
         if(cursor.moveToNext()){
-            //将遍历到的收入信息存储到 Tb_inaccount 类中
-            return new Tb_inaccount(cursor.getInt(cursor.getColumnIndex("_id")),
+            //将遍历到的收入信息存储到 Tb_outaccount 类中
+            return new Tb_outaccount(cursor.getInt(cursor.getColumnIndex("_id")),
                     cursor.getDouble(cursor.getColumnIndex("money")),
                     cursor.getString(cursor.getColumnIndex("time")),
                     cursor.getString(cursor.getColumnIndex("type")),
-                    cursor.getString(cursor.getColumnIndex("handler")),
+                    cursor.getString(cursor.getColumnIndex("address")),
                     cursor.getString(cursor.getColumnIndex("mark")));
         }
         return null;
@@ -59,31 +58,31 @@ public class InaccountDAO {
             }
             sb.deleteCharAt(sb.length() - 1);
             db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
-            db.execSQL("delete form tb_inaccount where _id in ("+sb+")",(Object[]) ids);
+            db.execSQL("delete form tb_outaccount where _id in ("+sb+")",(Object[]) ids);
         }
     }
 
-    public List<Tb_inaccount> getScrollData(int start,int count){
-        List<Tb_inaccount> tb_inaccounts = new ArrayList<Tb_inaccount>();
+    public List<Tb_outaccount> getScrollData(int start, int count){
+        List<Tb_outaccount> tb_outaccount = new ArrayList<Tb_outaccount>();
         db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
         //获取所有收入信息
-        Cursor cursor = db.rawQuery("select * from tb_inaccount limit ?,?",
+        Cursor cursor = db.rawQuery("select * from tb_outaccount limit ?,?",
                 new String[]{ String.valueOf(start), String.valueOf(count) });
         while(cursor.moveToNext()){//便利所有的收入信息
             //将遍历到的收入信息添加到集合中
-            tb_inaccounts.add(new Tb_inaccount(cursor.getInt(cursor.getColumnIndex("_id")),
+            tb_outaccount.add(new Tb_outaccount(cursor.getInt(cursor.getColumnIndex("_id")),
                     cursor.getDouble(cursor.getColumnIndex("money")),
                     cursor.getString(cursor.getColumnIndex("time")),
                     cursor.getString(cursor.getColumnIndex("type")),
-                    cursor.getString(cursor.getColumnIndex("handler")),
+                    cursor.getString(cursor.getColumnIndex("address")),
                     cursor.getString(cursor.getColumnIndex("mark"))));
         }
-        return tb_inaccounts;
+        return tb_outaccount;
     }
 
     public long getCount(){
         db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
-        Cursor cursor = db.rawQuery("select count(_id) from tb_inaccount", null);
+        Cursor cursor = db.rawQuery("select count(_id) from tb_outaccount", null);
         if(cursor.moveToNext()){         //判断Cursor中是否有数据
             return cursor.getLong(0);//返回总记录数
         }
@@ -91,7 +90,7 @@ public class InaccountDAO {
     }
     public int getMaxId(){
         db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
-        Cursor cursor = db.rawQuery("select max(_id) from tb_inaccount", null);
+        Cursor cursor = db.rawQuery("select max(_id) from tb_outaccount", null);
         if(cursor.moveToLast()){        //访问Cursor中的最后一条数据
             return cursor.getInt(0);//获取访问到的数据
         }
