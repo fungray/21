@@ -19,7 +19,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="我的收入"
+                android:text="我的支出"
                 android:textColor="#8C6931"
                 android:textSize="20dp"/>
         </RelativeLayout>
@@ -31,9 +31,9 @@
         android:layout_weight="0.94"
         android:orientation="vertical">
         <ListView
-            android:id="@+id/lvinaccountinfo"
+            android:id="@+id/lvoutaccountinfo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbarAlwaysDrawVerticalTrack="true"/>
     </LinearLayout>
-</LinearLayout> 
+</LinearLayout>

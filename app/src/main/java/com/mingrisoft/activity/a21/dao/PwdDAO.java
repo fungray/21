@@ -27,6 +27,18 @@ public class PwdDAO {
         return null;
     }
 
+    public void add(Tb_pwd tb_pwd) {
+        db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
+        db.execSQL("insert into tb_pwd (password) values (?)",
+                new Object[]{ tb_pwd.getPassword() });
+    }
+
+    public void update(Tb_pwd tb_pwd){
+        db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
+        db.execSQL("update tb_pwd set password = ? where _id = ?",
+                new Object[]{ tb_pwd.getPassword() });
+    }
+
     public long getCount(){
         db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
         Cursor cursor = db.rawQuery("select count(password) from tb_pwd", null);
@@ -34,12 +46,5 @@ public class PwdDAO {
             return cursor.getLong(0);//返回总记录数
         }
         return 0;                       //如果没数据，返回0
-    }
-
-    public String getPassword(){
-        db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
-
-
-        return null;
     }
 }

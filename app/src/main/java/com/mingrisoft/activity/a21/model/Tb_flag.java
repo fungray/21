@@ -7,6 +7,9 @@ package com.mingrisoft.activity.a21.model;
 public class Tb_flag {
     private int _id;     //便签编号
     private String flag; //便签类型
+    public Tb_flag(){ //默认构造函数
+        super();
+    }
 
     public Tb_flag(int id,String flag){
         super();

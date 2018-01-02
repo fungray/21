@@ -15,7 +15,7 @@ import com.mingrisoft.activity.a21.model.Tb_flag;
  * Created by apple on 2017/12/29.
  */
 
-class Accountflag extends AppCompatActivity implements View.OnClickListener {
+public class Accountflag extends AppCompatActivity implements View.OnClickListener {
     private EditText txtFlag;
     private Button btnflagSave;
     private Button btnflagCancel;

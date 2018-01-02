@@ -34,7 +34,12 @@ public class AddInaccount extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
-        setContentView(R.layout.AddInaccount);
+        setContentView(R.layout.addinaccount);
+        initView();
+        updateDisplay();
+    }
+
+    private void initView(){
         txtInMoney = (EditText) findViewById(R.id.txtInMoney);
         txtInTime = (EditText) findViewById(R.id.txtInTime);
         txtInHandler = (EditText) findViewById(R.id.txtInHandler);
@@ -51,8 +56,6 @@ public class AddInaccount extends AppCompatActivity implements View.OnClickListe
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
         mDay = c.get(Calendar.DAY_OF_MONTH);
-        updateDisplay();
-
     }
 
     @Override

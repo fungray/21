@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="intype" >
-        <item>kkk</item>
+        <item>aaa</item>
+        <item>bbb</item>
     </string-array>
-    <string-array name="type" />
+    <string-array name="type"/>
+    <string-array name="Outtype" >
+        <item>ccc</item>
+        <item>ddd</item>
+    </string-array>
 </resources>

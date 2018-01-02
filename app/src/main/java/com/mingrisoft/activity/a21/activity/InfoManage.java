@@ -20,7 +20,7 @@ import com.mingrisoft.activity.a21.model.Tb_outaccount;
  * Created by apple on 2017/12/29.
  */
 
-class InfoManage extends AppCompatActivity implements View.OnClickListener {
+public class InfoManage extends AppCompatActivity implements View.OnClickListener {
     private static final int DATE_DIALOG_ID = 0;
     private TextView tvtitle, textView;
     private EditText txtMoney, txtTime, txtHA, txtMark;

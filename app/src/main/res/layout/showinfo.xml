@@ -15,11 +15,27 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="fill_parent"
+            <Button
+                android:id="@+id/btnoutinfo"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="我的收入"
+                android:text="支出信息"
+                android:textColor="#8C6931"
+                android:textSize="20dp"/>
+            <Button
+                android:id="@+id/btnininfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/btnoutinfo"
+                android:text="收入信息"
+                android:textColor="#8C6931"
+                android:textSize="20dp"/>
+            <Button
+                android:id="@+id/btnflaginfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/btnininfo"
+                android:text="便签信息"
                 android:textColor="#8C6931"
                 android:textSize="20dp"/>
         </RelativeLayout>
@@ -31,9 +47,9 @@
         android:layout_weight="0.94"
         android:orientation="vertical">
         <ListView
-            android:id="@+id/lvinaccountinfo"
+            android:id="@+id/lvinfo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbarAlwaysDrawVerticalTrack="true"/>
     </LinearLayout>
-</LinearLayout> 
+</LinearLayout>
