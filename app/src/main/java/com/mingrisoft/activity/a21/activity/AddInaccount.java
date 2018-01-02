@@ -25,8 +25,8 @@ public class AddInaccount extends AppCompatActivity implements View.OnClickListe
     private static final int DATE_DIALOG_ID = 0;
     private EditText txtInMoney, txtInTime, txtInHandler, txtInMark;
     private Spinner spInType;
-    private Button btnInSaveButton;
-    private Button btnInCancelButton;
+    private Button btnInSave;
+    private Button btnInCancel;
     private int mYear;
     private int mMonth;
     private int mDay;
@@ -45,12 +45,12 @@ public class AddInaccount extends AppCompatActivity implements View.OnClickListe
         txtInHandler = (EditText) findViewById(R.id.txtInHandler);
         txtInMark = (EditText) findViewById(R.id.txtInMark);
         spInType = (Spinner) findViewById(R.id.spInType);
-        btnInSaveButton = (Button) findViewById(R.id.btnInSave);
-        btnInCancelButton = (Button) findViewById(R.id.btnInCancel);
+        btnInSave = (Button) findViewById(R.id.btnInSave);
+        btnInCancel = (Button) findViewById(R.id.btnInCancel);
 
         txtInTime.setOnClickListener(this);
-        btnInSaveButton.setOnClickListener(this);
-        btnInCancelButton.setOnClickListener(this);
+        btnInSave.setOnClickListener(this);
+        btnInCancel.setOnClickListener(this);
 
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);

@@ -19,10 +19,10 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("create table tb_outaccount (_id integer primary key,money decimal,time varchat(10)," +
                 "type varchar(10),address varchar(100),mark varchar(200))");                          //创建支出信息表
-        sqLiteDatabase.execSQL("create table tb_inaccount (_id integer primary key,money decimal,tme varchar(10)," +
+        sqLiteDatabase.execSQL("create table tb_inaccount (_id integer primary key,money decimal,time varchar(10)," +
                 "type varchar(10),handler varchar(100),mark varchar(200))");                          //创建收入信息表
         sqLiteDatabase.execSQL("create table tb_pwd (password varchar(20))");                       //创建密码表
-        sqLiteDatabase.execSQL("create table tb_falg (_id integer primary key,flag varchar(200))");//创建便签信息表
+        sqLiteDatabase.execSQL("create table tb_flag (_id integer primary key,flag varchar(200))");//创建便签信息表
     }
 
     //覆写基类的onUpgrade方法，以便数据库版本更新

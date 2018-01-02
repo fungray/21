@@ -27,8 +27,9 @@ public class Outaccountinfo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
+        setContentView(R.layout.outaccountinfo);
         lvinfo = (ListView) findViewById(R.id.lvoutaccountinfo);
-        showInfo(R.id.btnininfo);                  //调用自定义方法显示收入信息
+        showInfo(R.id.btnoutinfo);                  //调用自定义方法显示收入信息
         lvinfo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
@@ -44,7 +45,7 @@ public class Outaccountinfo extends AppCompatActivity {
     private void showInfo(int intType){               //用来根据传入的管理类型，显示相应的信息
         String[] strInfos = null;                       //自定义自负床数组，用来存储收入信息
         ArrayAdapter<String> arrayAdapter = null;       //创建ArrayAdapter对象
-        strType = "btnininfo";                       //为strType变量赋值
+        strType = "btnoutinfo";                       //为strType变量赋值
         OutaccountDAO outaccountinfo = new OutaccountDAO(Outaccountinfo.this);//创建InaccountDAO对象
         //获取所有收入信息，并存储到List泛型集合中
         List<Tb_outaccount> listinfos = outaccountinfo.getScrollData(0,(int) outaccountinfo.getCount());

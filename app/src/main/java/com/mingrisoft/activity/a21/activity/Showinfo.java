@@ -62,6 +62,10 @@ public class Showinfo extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            case R.id.btnininfo:
+                showInfo(R.id.btnininfo);
+            case R.id.btnoutinfo:
+                showInfo(R.id.btnoutinfo);
             case R.id.btnflaginfo:
                 showInfo(R.id.btnflaginfo);
         }

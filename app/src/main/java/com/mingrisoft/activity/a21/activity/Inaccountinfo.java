@@ -27,6 +27,7 @@ public class Inaccountinfo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
+        setContentView(R.layout.inaccountinfo);
         lvinfo = (ListView) findViewById(R.id.lvinaccountinfo);
         showInfo(R.id.btnininfo);                  //调用自定义方法显示收入信息
         lvinfo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
