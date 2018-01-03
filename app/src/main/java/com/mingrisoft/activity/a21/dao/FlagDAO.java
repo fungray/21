@@ -29,7 +29,7 @@ public class FlagDAO {
     public void update(Tb_flag tb_flag){
         db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
         db.execSQL("update tb_flag set flag = ? where _id = ?",
-                new Object[]{ tb_flag.get_id(), tb_flag.getFlag() });
+                new Object[]{ tb_flag.getFlag(), tb_flag.get_id() });
     }
 
     public Tb_flag find(int id){
@@ -52,7 +52,7 @@ public class FlagDAO {
             }
             sb.deleteCharAt(sb.length() - 1);
             db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
-            db.execSQL("delete form tb_flag where _id in ("+sb+")",(Object[]) ids);
+            db.execSQL("delete from tb_flag where _id in ("+sb+")",(Object[]) ids);
         }
     }
 

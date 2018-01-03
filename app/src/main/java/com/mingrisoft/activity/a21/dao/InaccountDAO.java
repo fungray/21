@@ -31,8 +31,8 @@ public class InaccountDAO {
     public void update(Tb_inaccount tb_inaccount){
         db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
         db.execSQL("update tb_inaccount set money = ?,time = ?,type = ?,handler = ?,mark = ? where _id = ?",
-                new Object[]{ tb_inaccount.get_id(), tb_inaccount.getMoney(), tb_inaccount.getTime(), tb_inaccount.getType(),
-                        tb_inaccount.getHandler(), tb_inaccount.getMark() });
+                new Object[]{ tb_inaccount.getMoney(), tb_inaccount.getTime(), tb_inaccount.getType(),
+                        tb_inaccount.getHandler(), tb_inaccount.getMark(), tb_inaccount.get_id() });
     }
 
     public Tb_inaccount find(int id){
@@ -59,7 +59,7 @@ public class InaccountDAO {
             }
             sb.deleteCharAt(sb.length() - 1);
             db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
-            db.execSQL("delete form tb_inaccount where _id in ("+sb+")",(Object[]) ids);
+            db.execSQL("delete from tb_inaccount where _id in ("+sb+")",(Object[]) ids);
         }
     }
 

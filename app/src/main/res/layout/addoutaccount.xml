@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtOutTime"
                 android:layout_toRightOf="@+id/tvOutType"
-                android:entries="@array/Outtype"/>
+                android:entries="@array/outtype"/>
             <TextView
                 android:id="@+id/tvOutAddress"
                 android:layout_width="90dp"

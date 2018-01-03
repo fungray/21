@@ -40,6 +40,7 @@ public class InfoManage extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.infomanage);
         Intent intent = getIntent();                      //创建Intent对象
         Bundle bundle = intent.getExtras();               //获取传入的数据，并使用Bundle记录
+        initView();
         strInfos = bundle.getStringArray(Showinfo.FLAG);//获取Bundle中记录的信息
         strid = strInfos[0];                           //记录id
         strType = strInfos[1];                         //记录类型
@@ -64,7 +65,7 @@ public class InfoManage extends AppCompatActivity implements View.OnClickListene
             txtHA.setText(tb_inaccount.getHandler());
             txtMark.setText(tb_inaccount.getMark());
         }
-        initView();
+
     }
 
     private void initView(){

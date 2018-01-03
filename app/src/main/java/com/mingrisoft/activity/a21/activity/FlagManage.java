@@ -24,13 +24,13 @@ public class FlagManage extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
-        setContentView(R.layout.showinfo);
+        setContentView(R.layout.flagmanage);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
+        initView();
         strid = bundle.getString(Showinfo.FLAG);
         final FlagDAO flagDAO = new FlagDAO(FlagManage.this);
         txtFlag.setText(flagDAO.find(Integer.parseInt(strid)).getFlag());
-        initView();
     }
 
     private void initView(){

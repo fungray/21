@@ -39,15 +39,19 @@ public class Showinfo extends AppCompatActivity implements View.OnClickListener 
 
     private void initView() {
         btnflaginfo = (Button) findViewById(R.id.btnflaginfo);
+        btnoutinfo = (Button) findViewById(R.id.btnoutinfo);
+        btnininfo = (Button) findViewById(R.id.btnininfo);
         lvinfo = (ListView) findViewById(R.id.lvinfo);
         btnflaginfo.setOnClickListener(this);
+        btnininfo.setOnClickListener(this);
+        btnoutinfo.setOnClickListener(this);
         lvinfo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String strInfo = String.valueOf(((TextView) view).getText());
                 String strid = strInfo.substring(0, strInfo.indexOf('|'));
                 Intent intent = null;
-                if(strType == "btnoutinfo" | strType == "btnininfo"){
+                if(strType == "btnoutinfo" || strType == "btnininfo"){
                     intent = new Intent(Showinfo.this, InfoManage.class);
                     intent.putExtra(FLAG,new String[]{strid, strType});
                 }else if(strType == "btnflaginfo"){
@@ -64,10 +68,13 @@ public class Showinfo extends AppCompatActivity implements View.OnClickListener 
         switch (view.getId()){
             case R.id.btnininfo:
                 showInfo(R.id.btnininfo);
+                break;
             case R.id.btnoutinfo:
                 showInfo(R.id.btnoutinfo);
+                break;
             case R.id.btnflaginfo:
                 showInfo(R.id.btnflaginfo);
+                break;
         }
     }
 

@@ -4,8 +4,13 @@
         <item>aaa</item>
         <item>bbb</item>
     </string-array>
-    <string-array name="type"/>
-    <string-array name="Outtype" >
+    <string-array name="type">
+        <item>aaa</item>
+        <item>bbb</item>
+        <item>ccc</item>
+        <item>ddd</item>
+    </string-array>
+    <string-array name="outtype" >
         <item>ccc</item>
         <item>ddd</item>
     </string-array>

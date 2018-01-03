@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnlogin = (Button) findViewById(R.id.btnLogin);
         btnclose = (Button) findViewById(R.id.btnClose);
         btnlogin.setOnClickListener(this);
+        btnclose.setOnClickListener(this);
     }
 
     @Override

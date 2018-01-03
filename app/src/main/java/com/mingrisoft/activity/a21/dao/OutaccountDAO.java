@@ -30,8 +30,8 @@ public class OutaccountDAO {
     public void update(Tb_outaccount tb_outaccount){
         db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
         db.execSQL("update tb_outaccount set money = ?,time = ?,type = ?,address = ?,mark = ? where _id = ?",
-                new Object[]{ tb_outaccount.get_id(), tb_outaccount.getMoney(), tb_outaccount.getTime(), tb_outaccount.getType(),
-                        tb_outaccount.getAddress(), tb_outaccount.getMark() });
+                new Object[]{ tb_outaccount.getMoney(), tb_outaccount.getTime(), tb_outaccount.getType(),
+                        tb_outaccount.getAddress(), tb_outaccount.getMark() , tb_outaccount.get_id() });
     }
 
     public Tb_outaccount find(int id){
@@ -58,7 +58,7 @@ public class OutaccountDAO {
             }
             sb.deleteCharAt(sb.length() - 1);
             db = helper.getWritableDatabase(); //初始化SQLiteDatabase对象
-            db.execSQL("delete form tb_outaccount where _id in ("+sb+")",(Object[]) ids);
+            db.execSQL("delete from tb_outaccount where _id in ("+sb+")",(Object[]) ids);
         }
     }
 
