@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="intype" >
-        <item>aaa</item>
-        <item>bbb</item>
+        <item>工资</item>
+        <item>奖金</item>
     </string-array>
     <string-array name="type">
         <item>aaa</item>
@@ -11,7 +11,7 @@
         <item>ddd</item>
     </string-array>
     <string-array name="outtype" >
-        <item>ccc</item>
-        <item>ddd</item>
+        <item>购物</item>
+        <item>吃饭</item>
     </string-array>
 </resources>

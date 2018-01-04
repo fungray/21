@@ -16,7 +16,7 @@
             android:layout_gravity="center"
             android:gravity="center_horizontal"
             android:text="支出管理"
-            android:textColor="#ffffff"
+            android:textColor="#8C6931"
             android:textSize="40sp"
             android:textStyle="bold"/>
     </LinearLayout>
